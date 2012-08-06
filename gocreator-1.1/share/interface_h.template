@@ -1,0 +1,30 @@
+/*                        
+ * (@ filename @).h       
+ *                        
+ * Created on: (@ time @) 
+ *     Author: (@ author @) <(@ email @)> 
+ */ 
+
+#ifndef (@ headerflag @) 
+#define (@ headerflag @) 
+
+#define (@ packname_upper @)_TYPE_(@ widgname_upper @)                ((@ packname @)_(@ widgname @)_get_type())
+#define (@ packname_upper @)_(@ widgname_upper @)(obj)                (G_TYPE_CHECK_INSTANCE_CAST((obj),   (@ packname_upper @)_TYPE_(@ widgname_upper @),(@ iname @)))
+#define (@ packname_upper @)_IS_(@ widgname_upper @)(obj)             (G_TYPE_CHECK_INSTANCE_TYPE((obj),   (@ packname_upper @)_TYPE_(@ widgname_upper @)))
+#define (@ packname_upper @)_(@ widgname_upper @)_GET_INTERFACE(obj)  (G_TYPE_INSTANCE_GET_INTERFACE((obj),(@ packname_upper @)_TYPE_(@ widgname_upper @),(@ iname @)Interface))
+
+typedef struct _(@ iname @)          (@ iname @);
+typedef struct _(@ iname @)Interface (@ iname @)Interface;
+
+struct _(@ iname @)Interface{
+    GTypeInterface parent;
+    /* interface functions */
+    
+};
+
+GType (@ packname @)_(@ widgname @)_get_type(void);
+
+/* add interface function */
+
+
+#endif /* (@ headerflag @) */
