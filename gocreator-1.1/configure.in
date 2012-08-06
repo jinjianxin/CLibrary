@@ -1,0 +1,25 @@
+AC_INIT(config_file.c,create_file.c,goc_creator.c,utils.c,config_file.h,create_file.h,goc_creator.h,utils.h,source.template,header.template)
+AM_INIT_AUTOMAKE(gocreator, 1.1)
+AM_CONFIG_HEADER(src/config.h:src/config.in)
+AC_PROG_CC
+AC_HEADER_STDC
+AC_CHECK_HEADERS([time.h stdio.h stdlib.h dirent.h string.h unistd.h sys/stat.h fcntl.h getopt.h])
+
+AC_FUNC_UTIME_NULL
+
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_SIZE_T
+
+
+# Checks for library functions.
+AC_FUNC_CLOSEDIR_VOID
+AC_FUNC_MALLOC
+AC_FUNC_STAT
+AC_CHECK_FUNCS([ftruncate memset mkdir strchr strdup])
+
+
+AC_CONFIG_FILES([Makefile
+                 share/Makefile
+                 src/Makefile])
+AC_OUTPUT
